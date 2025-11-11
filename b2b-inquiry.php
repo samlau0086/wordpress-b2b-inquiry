@@ -244,7 +244,7 @@ class B2B_Inquiry_Plugin {
     }
 
     public function enqueue_admin_assets($hook) {
-        if ($hook !== 'b2b-inquiry_page_b2b-inquiry-settings') {
+        if (strpos($hook, 'b2b-inquiry-settings') === false) {
             return;
         }
 
@@ -280,6 +280,10 @@ class B2B_Inquiry_Plugin {
                 <div class="b2b-inquiry-overlay"></div>
                 <div class="b2b-inquiry-content" role="dialog" aria-modal="true">
                     <button type="button" class="b2b-inquiry-close" aria-label="<?php esc_attr_e('Close', 'b2b-inquiry'); ?>">&times;</button>
+                    <div class="b2b-inquiry-page-info">
+                        <h2 class="b2b-inquiry-page-title"><?php echo esc_html($current_title); ?></h2>
+                        <p class="b2b-inquiry-page-url"><a href="<?php echo esc_url($current_url); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($current_url); ?></a></p>
+                    </div>
                     <form class="b2b-inquiry-form">
                         <input type="hidden" name="page_url" value="<?php echo esc_attr($current_url); ?>" />
                         <input type="hidden" name="page_title" value="<?php echo esc_attr($current_title); ?>" />

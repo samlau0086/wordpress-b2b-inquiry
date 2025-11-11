@@ -33,11 +33,11 @@
 }
 
 .b2b-inquiry-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -59,6 +59,20 @@
     background: transparent;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.b2b-inquiry-page-info {
+    margin-bottom: 1.5rem;
+}
+
+.b2b-inquiry-page-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.b2b-inquiry-page-url {
+    margin: 0;
+    word-break: break-all;
 }
 
 .b2b-inquiry-feedback {

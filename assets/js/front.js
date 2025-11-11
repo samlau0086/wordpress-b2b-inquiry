@@ -10,12 +10,15 @@
         wrapper.find('.b2b-inquiry-modal').removeClass('is-visible').attr('aria-hidden', 'true');
     }
 
-    function resetForm(wrapper) {
+    function resetForm(wrapper, options) {
+        var settings = options || {};
         var form = wrapper.find('.b2b-inquiry-form')[0];
         if (form) {
             form.reset();
         }
-        wrapper.find('.b2b-inquiry-feedback').empty();
+        if (settings.clearFeedback !== false) {
+            wrapper.find('.b2b-inquiry-feedback').empty();
+        }
         if (B2BInquirySettings.email) {
             wrapper.find('input[name="email"]').val(B2BInquirySettings.email);
         }
@@ -53,9 +56,10 @@
                 .done(function (response) {
                     if (response && response.success) {
                         feedback.text(B2BInquirySettings.labels.success);
-                        form.trigger('reset');
+                        resetForm(wrapper, { clearFeedback: false });
                         setTimeout(function () {
                             closeModal(wrapper);
+                            resetForm(wrapper);
                         }, 1500);
                     } else {
                         feedback.text((response && response.data && response.data.message) || B2BInquirySettings.labels.error);
