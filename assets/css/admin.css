@@ -1,0 +1,10 @@
+.b2b-inquiry-repeatable {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.b2b-inquiry-repeatable input.regular-text {
+    flex: 1;
+}
