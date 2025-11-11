@@ -1,0 +1,88 @@
+.b2b-inquiry-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.b2b-inquiry-button {
+    background-color: #2271b1;
+    color: #fff;
+    border: none;
+    padding: 0.6em 1.2em;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.b2b-inquiry-button:hover,
+.b2b-inquiry-button:focus {
+    background-color: #135e96;
+}
+
+.b2b-inquiry-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+}
+
+.b2b-inquiry-modal.is-visible {
+    display: block;
+}
+
+.b2b-inquiry-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.b2b-inquiry-content {
+    position: relative;
+    max-width: 480px;
+    margin: 5% auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+.b2b-inquiry-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.b2b-inquiry-feedback {
+    margin-top: 1rem;
+    color: #2271b1;
+}
+
+.b2b-inquiry-form p {
+    margin-bottom: 1rem;
+}
+
+.b2b-inquiry-form input,
+.b2b-inquiry-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccd0d4;
+    border-radius: 3px;
+}
+
+.b2b-inquiry-form textarea {
+    min-height: 120px;
+}
+
+.b2b-inquiry-form .button.button-primary {
+    background-color: #2271b1;
+    border: none;
+}
